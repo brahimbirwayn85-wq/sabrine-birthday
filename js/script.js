@@ -929,9 +929,9 @@ updateRating();
     في YOUR_EMAIL.
 */
 
-const YOUR_WHATSAPP = "";
+const YOUR_WHATSAPP = "212716609033";
 
-const YOUR_EMAIL = "";
+const YOUR_EMAIL = "brahimbirwayn85@gmail.com";
 
 
 sendRatingBtn.addEventListener(

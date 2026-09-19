@@ -217,6 +217,7 @@ button {
 
 /* =========================
    ENVELOPE
+   FIXED ONLY
 ========================= */
 
 .envelope {
@@ -244,6 +245,10 @@ button {
         );
 
     outline: none;
+
+    perspective: 900px;
+
+    overflow: hidden;
 }
 
 .envelope:hover,
@@ -257,6 +262,8 @@ button {
     position: absolute;
 
     inset: 0;
+
+    z-index: 1;
 
     background:
         linear-gradient(
@@ -279,15 +286,16 @@ button {
 
     clip-path:
         polygon(
-            0 100%,
+            0 0,
             50% 48%,
-            100% 100%
+            100% 0,
+            100% 100%,
+            0 100%
         );
 
     background: #e875a0;
 
-    border-radius:
-        0 0 12px 12px;
+    border-radius: 12px;
 }
 
 .letter-preview {
@@ -316,6 +324,21 @@ button {
     z-index: 2;
 
     border-radius: 7px;
+
+    /*
+       Hidden while the envelope is closed.
+       This prevents the white paper from
+       appearing through the envelope folds.
+    */
+
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity .45s ease,
+        transform .65s ease;
 }
 
 .envelope-flap {
@@ -353,6 +376,17 @@ button {
 
 .envelope.open .envelope-flap {
     transform: rotateX(180deg);
+
+    z-index: 2;
+}
+
+.envelope.open .letter-preview {
+    opacity: 1;
+
+    transform:
+        translateY(-35px);
+
+    z-index: 5;
 }
 
 .click-hint {
