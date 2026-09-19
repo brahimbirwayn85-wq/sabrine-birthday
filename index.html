@@ -15,7 +15,7 @@
          DECORATIONS
     ========================== -->
 
-    <div class="decorations">
+    <div class="decorations" aria-hidden="true">
         <div class="sticker flower flower1">🌸</div>
         <div class="sticker flower flower2">🌷</div>
         <div class="sticker balloon balloon1">🎈</div>
@@ -27,90 +27,132 @@
         <div class="sticker flower flower3">🌹</div>
     </div>
 
+
     <!-- =========================
          PAGE 1
-         ENVELOPE
+         ENVELOPE + LETTER
     ========================== -->
 
-    <section id="page1" class="page active">
+    <section id="page1" class="page active page-one">
 
-        <div class="intro">
+        <div class="page-one-stage">
 
-            <h1>إلى صبرينة 🌸</h1>
+            <div class="intro">
 
-            <p class="small-text">
-                هناك شيء صغير أريد أن أقوله لك...
-            </p>
+                <h1>إلى صبرينة 🌸</h1>
 
-            <div id="envelope" class="envelope">
+                <p class="small-text">
+                    هناك شيء صغير أريد أن أقوله لك...
+                </p>
 
-                <div class="envelope-back"></div>
+                <div
+                    id="envelope"
+                    class="envelope"
+                    role="button"
+                    tabindex="0"
+                    aria-label="فتح الظرف"
+                >
 
-                <div class="letter-preview">
-                    💌
+                    <div class="envelope-back"></div>
+
+                    <div class="letter-preview">
+                        💌
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
                 </div>
 
-                <div class="envelope-flap"></div>
+                <p class="click-hint">
+                    اضغطي على الظرف 💌
+                </p>
 
             </div>
 
-            <p class="click-hint">
-                اضغطي على الظرف 💌
-            </p>
 
-        </div>
+            <!-- =========================
+                 YELLOW PAPER
+            ========================== -->
 
-        <!-- LETTER -->
+            <div
+                id="letter"
+                class="letter"
+                aria-hidden="true"
+            >
 
-        <div id="letter" class="letter">
+                <div class="letter-content">
 
-            <div class="letter-content">
-
-                <h2>عندي اعتراف صغير... 🥲</h2>
-
-                <p>
-                    آسف أني ما كنت أعرف أن عيد ميلادك كان البارحة.
-                </p>
-
-                <p>
-                    فعلًا آسف...
-                </p>
-
-                <p>
-                    كان لازم أسأل على الأقل.
-                </p>
-
-                <p class="question">
-                    سامحتيني ؟؟ 🥺
-                </p>
-
-                <div class="answer-buttons">
-
-                    <button id="yesBtn" class="yes-btn">
-                        أجل 🤍
-                    </button>
-
-                    <button id="noBtn" class="no-btn">
-                        لا 😠
-                    </button>
-
-                </div>
-
-                <div id="noMessage" class="no-message"></div>
-
-                <div id="yesMessage" class="yes-message">
-
-                    <div class="celebration">
-                        🥳🎉
+                    <div class="paper-decoration">
+                        🌸
                     </div>
 
-                    <p>
-                        شكرا شكرا شكرا يا أحلى صبرينة في الكون 🤍🌸
+                    <p class="letter-main-text">
+
+                        عيد ميلاد سعيد حبي 🤍🌸
+                        <br><br>
+
+                        اسف لني ما حضرت حفلتك امبارح كان لازم ابقى مركز اسف والله بس ان شاء الله هاحتفل معاك عيد ميلادك في وقته الحقيقي اتمنى
+
+                        <br><br>
+
+                        سامحتيني على استهثاري ؟؟
+
                     </p>
 
-                    <button id="nextBtn1" class="next-btn">
-                        التالي 🌷
-                    </button>
+
+                    <div class="answer-buttons">
+
+                        <button
+                            id="yesBtn"
+                            class="yes-btn"
+                            type="button"
+                        >
+                            نعم 🤍
+                        </button>
+
+                        <button
+                            id="noBtn"
+                            class="no-btn"
+                            type="button"
+                        >
+                            لا 😭
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="noMessage"
+                        class="no-message"
+                    ></div>
+
+
+                    <div
+                        id="yesMessage"
+                        class="yes-message"
+                    >
+
+                        <div class="celebration">
+                            🥳🥰💗
+                        </div>
+
+                        <p>
+                            وييييييي شكرا حبييي وان شاء الله ما رح انسى ثاني 😌💌
+                            <br>
+                            الحين اتمنى تستمتعي بهديتك دي مع انها مش شيء يذكر 🙃😊
+                        </p>
+
+                        <button
+                            id="nextBtn1"
+                            class="next-btn"
+                            type="button"
+                        >
+                            متابعة 🌷
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -120,9 +162,10 @@
 
     </section>
 
+
     <!-- =========================
          PAGE 2
-         CAKE
+         CAKE + MUSIC
     ========================== -->
 
     <section id="page2" class="page">
@@ -130,7 +173,7 @@
         <div class="birthday-section">
 
             <h1>
-                كل عام وأنتِ بخير يا صبرينة 🎂
+                عيد ميلاد سعيد لأحلى صبرينة في العالم 🥳🥰
             </h1>
 
             <div class="big-cake">
@@ -138,219 +181,360 @@
             </div>
 
             <p>
-                هذه المرة لا توجد شموع حقيقية...
-                لذلك عليكِ أن تكتفي بهذه 😂
+                اتمنى لو اقدر اعطيك قالب كعك حقيقي بس اعععع 🤧🤧
             </p>
 
 
-            <!-- ========================= BIRTHDAY MUSIC ========================= --> 
-             <div class="music-player"> 
-                <audio id="birthdayMusic"> 
-                    <source src="assets/audio/birthday.m4a" type="audio/mp4"> 
-                </audio> 
-                <div class="music-buttons"> 
-                    <button id="playMusicBtn" class="main-btn">
-                         ▶️ تشغيل أغنية عيد الميلاد 
-                        </button> 
-                        <button id="pauseMusicBtn" class="main-btn hidden">
-                             ⏸️ إيقاف الأغنية 
-                            </button> 
-                             <button id="skipMusicBtn" class="main-btn">
-                                 ⏭️ تخطي الأغنية 
-                                </button>
-                                 </div> 
-                                 <button id="openGiftsBtn" class="main-btn hidden">
-                                     🎁 هيا لنفتح الهدايا 
-                                    </button> 
-                                </div>
+            <!-- =========================
+                 MUSIC
+            ========================== -->
+
+            <div class="music-player">
+
+                <audio
+                    id="birthdayMusic"
+                    preload="metadata"
+                >
+                    <source
+                        src="assets/audio/birthday.m4a"
+                        type="audio/mp4"
+                    >
+                </audio>
+
+
+                <div class="music-buttons">
+
+                    <button
+                        id="playMusicBtn"
+                        class="music-icon-btn"
+                        type="button"
+                        aria-label="تشغيل الأغنية"
+                    >
+                        ▶️
+                    </button>
+
+
+                    <button
+                        id="pauseMusicBtn"
+                        class="music-icon-btn hidden"
+                        type="button"
+                        aria-label="إيقاف الأغنية"
+                    >
+                        ⏸
+                    </button>
+
+
+                    <button
+                        id="skipMusicBtn"
+                        class="music-icon-btn skip-btn"
+                        type="button"
+                        aria-label="تخطي الأغنية"
+                    >
+                        ⏭
+                    </button>
+
+                </div>
+
+            </div>
 
         </div>
 
     </section>
+
 
     <!-- =========================
          PAGE 3
          GIFTS
     ========================== -->
 
-    <section id="page3" class="page">
+    <section
+        id="page3"
+        class="page gifts-page"
+    >
 
-        <h1>ثلاث هدايا صغيرة لكِ 🎁</h1>
+        <div class="gifts-wrapper">
 
-        <p>
-            اختاري أي واحدة تريدين فتحها أولًا.
-        </p>
+            <h1>
+                ثلاث هدايا صغيرة لكِ 🎁
+            </h1>
 
-        <div class="gifts">
-
-            <div class="gift-card" data-gift="game">
-
-                <div class="gift-icon">
-                    🎁
-                </div>
-
-                <h3>الهدية الأولى</h3>
-
-                <p>
-                    لعبة صغيرة 🎮
-                </p>
-
-            </div>
-
-            <div class="gift-card" data-gift="letter">
-
-                <div class="gift-icon">
-                    💌
-                </div>
-
-                <h3>الهدية الثانية</h3>
-
-                <p>
-                    رسالة مني 🤍
-                </p>
-
-            </div>
-
-            <div class="gift-card" data-gift="flowers">
-
-                <div class="gift-icon">
-                    💐
-                </div>
-
-                <h3>الهدية الثالثة</h3>
-
-                <p>
-                    شيء صغير لكِ 🌷
-                </p>
-
-            </div>
-
-        </div>
-
-        <!-- GAME -->
-
-        <div id="gameBox" class="gift-content hidden">
-
-            <h2>🎮 لعبة صغيرة</h2>
-
-            <p>
-                اضغطي على القلوب واجمعي 10 قلوب!
+            <p class="gifts-intro">
+                اختاري أي واحدة تريدين فتحها أولًا 💗
             </p>
 
-            <div id="heartGame"></div>
 
-            <p id="score">
-                القلوب: 0 / 10
-            </p>
+            <div class="gifts">
 
-            <p id="gameResult"></p>
 
-        </div>
+                <!-- GIFT 1 -->
 
-        <!-- LETTER -->
+                <button
+                    class="gift-card"
+                    data-gift="game"
+                    type="button"
+                >
 
-        <div id="giftLetter" class="gift-content hidden">
+                    <span class="gift-icon">
+                        🎁
+                    </span>
 
-            <h2>💌 رسالة لكِ</h2>
+                    <span class="gift-card-title">
+                        الهدية الأولى
+                    </span>
 
-            <div class="personal-letter">
+                    <span class="gift-card-text">
+                        لعبة صغيرة 🎮
+                    </span>
 
-                <p>
-                    صبرينة...
-                </p>
+                </button>
 
-                <p>
-                    أعرف أنني أخطأت في شيء كان المفروض أن أعرفه،
-                    لكنني لا أريد أن يكون هذا الخطأ هو الشيء الوحيد
-                    الذي تتذكرينه من هذا اليوم.
-                </p>
 
-                <p>
-                    أتمنى أن تكون سنتك الجديدة مليئة بالأشياء
-                    التي تجعلك تبتسمين فعلًا.
-                </p>
+                <!-- GIFT 2 -->
 
-                <p>
-                    وأتمنى أن أبقى شخصًا يضيف شيئًا جميلًا
-                    إلى أيامك، حتى لو كانت المسافة بيننا طويلة.
-                </p>
+                <button
+                    class="gift-card"
+                    data-gift="photos"
+                    type="button"
+                >
 
-                <p>
-                    عيد ميلاد سعيد يا صبرينة 🤍
-                </p>
+                    <span class="gift-icon">
+                        💌
+                    </span>
 
-            </div>
+                    <span class="gift-card-title">
+                        الهدية الثانية
+                    </span>
 
-        </div>
+                    <span class="gift-card-text">
+                        صور لكِ 🤍
+                    </span>
 
-        <!-- FLOWERS -->
+                </button>
 
-        <div id="flowersBox" class="gift-content hidden">
 
-            <h2>💐 هذه لكِ</h2>
+                <!-- GIFT 3 -->
 
-            <div class="flower-display">
-                <img src="assets/images/bouquet.jpg"
-                     alt="باقة ورود"
-                     onerror="this.style.display='none'">
+                <button
+                    class="gift-card"
+                    data-gift="letter"
+                    type="button"
+                >
 
-                <div class="emoji-bouquet">
-                    💐🌷🌹🌸
-                </div>
-            </div>
+                    <span class="gift-icon">
+                        💐
+                    </span>
 
-            <p>
-                ويمكنك تحميل صورك المفضلة من هنا 🤍
-            </p>
+                    <span class="gift-card-title">
+                        الهدية الثالثة
+                    </span>
 
-            <div class="photos">
+                    <span class="gift-card-text">
+                        رسالة مني 💞
+                    </span>
 
-                <div class="photo-item">
-                    <img src="assets/images/photo1.jpg"
-                         alt="صورة"
-                         onerror="this.style.display='none'">
-
-                    <a href="assets/images/photo1.jpg"
-                       download>
-                        تحميل الصورة 📥
-                    </a>
-                </div>
-
-                <div class="photo-item">
-                    <img src="assets/images/photo2.jpg"
-                         alt="صورة"
-                         onerror="this.style.display='none'">
-
-                    <a href="assets/images/photo2.jpg"
-                       download>
-                        تحميل الصورة 📥
-                    </a>
-                </div>
-
-                <div class="photo-item">
-                    <img src="assets/images/photo3.jpg"
-                         alt="صورة"
-                         onerror="this.style.display='none'">
-
-                    <a href="assets/images/photo3.jpg"
-                       download>
-                        تحميل الصورة 📥
-                    </a>
-                </div>
+                </button>
 
             </div>
 
-        </div>
 
-        <button id="continueBtn" class="main-btn">
-            متابعة 🌸
-        </button>
+            <!-- =========================
+                 GIFT CONTENT
+            ========================== -->
+
+            <div
+                id="giftContent"
+                class="gift-content hidden"
+            >
+
+
+                <!-- =========================
+                     GAME
+                ========================== -->
+
+                <div
+                    id="gameBox"
+                    class="gift-panel hidden"
+                >
+
+                    <h2>
+                        🎮 لعبة صغيرة
+                    </h2>
+
+                    <p>
+                        اضغطي على القلوب واجمعي 10 قلوب!
+                    </p>
+
+                    <div id="heartGame"></div>
+
+                    <p id="score">
+                        القلوب: 0 / 10
+                    </p>
+
+                    <p id="gameResult"></p>
+
+                    <button
+                        id="restartGameBtn"
+                        class="small-action-btn hidden"
+                        type="button"
+                    >
+                        🔄 إعادة اللعب
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     PHOTOS
+                ========================== -->
+
+                <div
+                    id="photosBox"
+                    class="gift-panel hidden"
+                >
+
+                    <h2>
+                        📸 صور لكِ
+                    </h2>
+
+
+                    <div class="flower-display">
+
+                        <img
+                            src="assets/images/bouquet.jpg"
+                            alt="باقة ورود"
+                            onerror="this.style.display='none'"
+                        >
+
+                        <div class="emoji-bouquet">
+                            💐🌷🌹🌸
+                        </div>
+
+                    </div>
+
+
+                    <div class="photos">
+
+                        <div class="photo-item">
+
+                            <img
+                                src="assets/images/photo1.jpg"
+                                alt="صورة"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <a
+                                href="assets/images/photo1.jpg"
+                                download
+                            >
+                                تحميل الصورة 📥
+                            </a>
+
+                        </div>
+
+
+                        <div class="photo-item">
+
+                            <img
+                                src="assets/images/photo2.jpg"
+                                alt="صورة"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <a
+                                href="assets/images/photo2.jpg"
+                                download
+                            >
+                                تحميل الصورة 📥
+                            </a>
+
+                        </div>
+
+
+                        <div class="photo-item">
+
+                            <img
+                                src="assets/images/photo3.jpg"
+                                alt="صورة"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <a
+                                href="assets/images/photo3.jpg"
+                                download
+                            >
+                                تحميل الصورة 📥
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     PERSONAL LETTER
+                ========================== -->
+
+                <div
+                    id="giftLetter"
+                    class="gift-panel hidden"
+                >
+
+                    <h2>
+                        💌 إلى لؤلؤتي
+                    </h2>
+
+
+                    <div class="personal-letter">
+
+                        <p>
+                            الى لؤلؤتي 💞💎
+                        </p>
+
+                        <p>
+                            عيد ميلاد سعيد حبي وكل عام وانتي بخير 🥳😌
+                        </p>
+
+                        <p>
+                            سواء كان عيد ميلادك او لا هنحتفل بيك كل يوم تستحقي اكثر واكثر 💗💌
+                        </p>
+
+                        <p>
+                            اتمنى تكوني دايما باحسن صحة واحسن حال وتدوم عليك الفرحة والسعادة ان شاء الله اتمنى لك كل خير 🤧🌸
+                        </p>
+
+                        <p>
+                            احبك واتمنى تكون الهدية عجبتك 🤗🤭
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CONTINUE
+            ========================== -->
+
+            <button
+                id="continueBtn"
+                class="main-btn continue-btn"
+                type="button"
+            >
+                التالي 💗
+            </button>
+
+        </div>
 
     </section>
 
+
     <!-- =========================
          PAGE 4
-         30 LANGUAGES
+         50 LANGUAGES + RATING
     ========================== -->
 
     <section id="page4" class="page">
@@ -369,14 +553,112 @@
 
         </div>
 
+
+        <!-- =========================
+             RATING
+        ========================== -->
+
+        <div class="rating-section">
+
+            <p class="rating-question">
+                عجبتك الهدية؟ 🌸
+            </p>
+
+
+            <button
+                id="ratingOpenBtn"
+                class="main-btn"
+                type="button"
+            >
+                تقييم للهدية 💌
+            </button>
+
+
+            <div
+                id="ratingBox"
+                class="rating-box hidden"
+            >
+
+                <div
+                    class="rating-emoji"
+                    id="ratingEmoji"
+                >
+                    😭
+                </div>
+
+
+                <div class="rating-value">
+
+                    <span>
+                        التقييم:
+                    </span>
+
+                    <strong id="ratingValue">
+                        0
+                    </strong>
+
+                    <span>
+                        / 10
+                    </span>
+
+                </div>
+
+
+                <input
+                    id="ratingRange"
+                    type="range"
+                    min="0"
+                    max="10"
+                    step="1"
+                    value="0"
+                    aria-label="اختاري تقييم الهدية من صفر إلى عشرة"
+                >
+
+
+                <div class="range-labels">
+
+                    <span>
+                        0 😭
+                    </span>
+
+                    <span>
+                        5 💗
+                    </span>
+
+                    <span>
+                        10 🤧
+                    </span>
+
+                </div>
+
+
+                <button
+                    id="sendRatingBtn"
+                    class="main-btn"
+                    type="button"
+                >
+                    إرسال التقييم 💌
+                </button>
+
+
+                <p
+                    id="ratingStatus"
+                    class="rating-status"
+                ></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FINAL
+        ========================== -->
+
         <div class="final-message">
 
             <p>
-                آسف، آخر مرة أنسى عيد ميلادك 🥲
-            </p>
-
-            <p>
-                وأتمنى تعجبك هذه الهدية المتواضعة 🤍🌷
+                اتمنى تعجبك هذه الهدية المتواضعة 🤍🌷
             </p>
 
             <div class="final-decoration">
@@ -386,6 +668,7 @@
         </div>
 
     </section>
+
 
     <script src="js/script.js"></script>
 
