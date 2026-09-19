@@ -57,13 +57,7 @@ button {
 
     position: relative;
 
-    /*
-       مهم:
-       لا نستخدم overflow:hidden هنا
-       حتى تستطيع الصفحة التمدد لأسفل
-       على شاشات الهاتف الصغيرة.
-    */
-    overflow: visible;
+    overflow: hidden;
 }
 
 .page.active {
@@ -174,12 +168,6 @@ button {
         );
 
     padding-bottom: 80px;
-
-    /*
-       السماح للمحتوى بالتمدد لأسفل
-       بدل قص الجزء السفلي.
-    */
-    overflow: visible;
 }
 
 .page-one-stage {
@@ -256,6 +244,10 @@ button {
         );
 
     outline: none;
+
+    background: #f8a9c8;
+
+    border-radius: 12px;
 }
 
 .envelope:hover,
@@ -270,36 +262,59 @@ button {
 
     inset: 0;
 
-    background:
-        linear-gradient(
-            145deg,
-            #f8a9c8,
-            #ed82aa
-        );
+    background: transparent;
 
     border-radius: 12px;
 
-    overflow: hidden;
+    overflow: visible;
+
+    z-index: 3;
 }
 
-.envelope-front {
+/* المثلث الأيسر */
+.envelope-back::before {
+    content: "";
+
     position: absolute;
 
     inset: 0;
 
-    z-index: 3;
+    background:
+        linear-gradient(
+            145deg,
+            #d95c89,
+            #c94b78
+        );
 
     clip-path:
         polygon(
-            0 100%,
-            50% 48%,
-            100% 100%
+            0 0,
+            50% 50%,
+            0 100%
+        );
+}
+
+/* المثلث الأيمن */
+.envelope-back::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            215deg,
+            #d95c89,
+            #c94b78
         );
 
-    background: #e875a0;
-
-    border-radius:
-        0 0 12px 12px;
+    clip-path:
+        polygon(
+            100% 0,
+            50% 50%,
+            100% 100%
+        );
 }
 
 .letter-preview {
@@ -307,11 +322,11 @@ button {
 
     background: #fffdf7;
 
-    width: 72%;
-    height: 72%;
+    width: 46%;
+    height: 58%;
 
-    left: 14%;
-    top: 14%;
+    left: 27%;
+    top: 12%;
 
     display: flex;
 
@@ -328,6 +343,40 @@ button {
     z-index: 2;
 
     border-radius: 7px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(80, 30, 50, .12);
+
+    transition:
+        transform .9s
+        cubic-bezier(.2, .75, .2, 1),
+        opacity .5s ease;
+}
+
+.envelope-front {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 48%,
+            100% 100%
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            #d95c89,
+            #c94b78
+        );
+
+    border-radius:
+        0 0 12px 12px;
 }
 
 .envelope-flap {
@@ -338,7 +387,7 @@ button {
     width: 100%;
     height: 57%;
 
-    z-index: 4;
+    z-index: 5;
 
     clip-path:
         polygon(
@@ -350,8 +399,8 @@ button {
     background:
         linear-gradient(
             145deg,
-            #ed82aa,
-            #dc6994
+            #d95c89,
+            #c94b78
         );
 
     transform-origin: top center;
@@ -363,8 +412,18 @@ button {
     backface-visibility: hidden;
 }
 
+/* عند الفتح: الورقة تصعد فوق المثلثات */
+.envelope.open .letter-preview {
+    transform:
+        translateY(-38px);
+
+    z-index: 6;
+}
+
+/* المثلث العلوي ينفتح إلى الأعلى */
 .envelope.open .envelope-flap {
-    transform: rotateX(180deg);
+    transform:
+        rotateX(180deg);
 }
 
 .click-hint {
@@ -395,7 +454,7 @@ button {
 
     opacity: 0;
 
-    max-height: 900px;
+    max-height: 0;
 
     overflow: hidden;
 
@@ -812,8 +871,6 @@ button {
     padding-top: 60px;
 
     padding-bottom: 70px;
-
-    overflow: visible;
 }
 
 .gifts-wrapper {
@@ -1419,12 +1476,6 @@ button {
         padding-left: 14px;
 
         padding-right: 14px;
-
-        /*
-           لا تقص محتوى الرسالة عندما يتجاوز
-           ارتفاع شاشة الهاتف.
-        */
-        overflow: visible;
     }
 
     .sticker {
@@ -1462,18 +1513,11 @@ button {
             );
 
         margin-top: 12px;
-
-        /*
-           السماح للورقة بالظهور كاملة.
-        */
-        overflow: visible;
     }
 
     .letter.show {
 
         margin-top: 14px;
-
-        max-height: none;
     }
 
     .letter-content {
@@ -1531,8 +1575,6 @@ button {
     .gifts-page {
 
         padding-top: 42px;
-
-        overflow: visible;
     }
 
     .gifts {
